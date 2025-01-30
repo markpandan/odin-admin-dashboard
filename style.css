@@ -106,16 +106,27 @@ body {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  gap: 32px;
+  gap: 50px;
 }
 
-.sidebar > * {
+.sidebar > *,
+.sidebar > div {
   padding-left: 2rem;
 }
 
-.menu-list > *,
-.menu-list-2 > * {
-  padding: 0.4rem 0;
+.sidebar > div {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.menu-list > li,
+.menu-list-2 > li {
+  padding: 0.5rem 0;
+
+  display: flex;
+  gap: 32px;
+  align-items: center;
 }
 
 .nav {
