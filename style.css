@@ -30,15 +30,13 @@ body {
   margin: 0;
   font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  height: 100vh;
-  overflow: hidden;
 }
 
 .container {
   display: grid;
   height: 100vh;
 
-  grid-template: 1fr 1.25fr 9fr / 1fr 4fr;
+  grid-template: 1fr 1fr 9fr / 1fr 4fr;
   grid-template-areas:
     "sidebar header"
     "sidebar nav"
@@ -149,6 +147,7 @@ body {
 }
 .main-content {
   grid-area: main-content;
+  height: unset;
   padding: 16px 24px 64px;
   background-color: var(--grey-color);
   display: grid;
@@ -184,6 +183,13 @@ body {
 
   display: flex;
   flex-direction: column;
+}
+
+.card > p {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
 .card-button-group {
