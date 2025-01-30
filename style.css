@@ -1,5 +1,29 @@
+:root {
+  --white-color: #f5efff;
+  --grey-color: #e5d9f2;
+  --light-accent-color: #cdc1ff;
+  --dark-accent-color: #a294f9;
+}
+
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  height: 50px;
+  width: 128px;
+  border: none;
+  border-radius: 32px;
+  background-color: var(--dark-accent-color);
+  color: white;
+  font-size: larger;
+}
+
+ul {
+  list-style-type: none;
+  font-size: calc(24px + 0.5rem);
 }
 
 body {
@@ -12,23 +36,103 @@ body {
   display: grid;
   height: 100vh;
 
-  grid-template: 1fr 1.25fr 9fr / 1fr 3fr;
+  grid-template: 1fr 1.25fr 9fr / 1fr 4fr;
   grid-template-areas:
     "sidebar header"
     "sidebar nav"
     "sidebar main-content";
 }
 
+.icon {
+  width: max(32px, 50px);
+  height: max(32px, 50px);
+}
+
+.circle {
+  width: max(32px, 50px);
+  height: max(32px, 50px);
+  border-radius: 50%;
+  background-color: var(--grey-color);
+}
+
+.circle {
+  width: max(50px, 72px);
+  height: max(50px, 72px);
+  border-radius: 50%;
+  background-color: var(--grey-color);
+}
+
+.header,
+.nav {
+  background-color: var(--white-color);
+  padding: 0 2rem;
+}
+
 .header {
   grid-area: header;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-container {
+  display: flex;
+  gap: 16px;
+
+  align-items: center;
+}
+
+.search-bar {
+  width: max(10rem, 1000px);
+  height: 4rem;
+  background-color: var(--grey-color);
+  border-radius: max(16px, 32px);
+}
+
+.account-tools {
+  display: flex;
+  align-items: center;
+  gap: 32px;
 }
 
 .sidebar {
   grid-area: sidebar;
+  color: var(--white-color);
+  background-color: var(--dark-accent-color);
+  padding: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 32px;
+}
+
+.sidebar > * {
+  padding-left: 2rem;
+}
+
+.menu-list > *,
+.menu-list-2 > * {
+  padding: 0.4rem 0;
 }
 
 .nav {
   grid-area: nav;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.profile-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.button-group {
+  display: flex;
+  gap: 32px;
 }
 
 .main-content {
